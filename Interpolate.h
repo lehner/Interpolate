@@ -7,6 +7,7 @@
 */
 #include <vector>
 
+#define _EPS_NUM 1e-14
 
 template<class C,class I> class Interpolate {
  public:
@@ -108,14 +109,15 @@ template<class C,class I> class Interpolate {
     for (j=0;j<dims.size();j++) {
       _dim* d = &dims[j];
       double fj = (x[j] - d->x0) / (d->x1 - d->x0); // 0 <= fj <= 1
-      if (fj < 0.0 || fj > 1.0)
+      if (fj < 0.0 - _EPS_NUM || fj > 1.0 + _EPS_NUM)
 	throw "Out of bounds";
       int ileft = (int)(fj * (d->N-1)); // fringe case for x[j] == d->x1, ileft=d->N-1
       int iright = (ileft == d->N-1) ? ileft : ileft + 1;
       double dj = (d->x1 - d->x0) / (double)(d->N - 1);
       double lam = (x[j] - d->x0 - dj*ileft) / dj;
-      if (lam < 0.0 || lam > 1.0)
+      if (lam < 0.0 - _EPS_NUM || lam > 1.0 + _EPS_NUM)
 	throw "Logic bomb";
+
       il[j] = ileft;
       vl[j] = lam;
     }
