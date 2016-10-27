@@ -86,8 +86,8 @@ int main(int argc, char* argv[]) {
   ip.Dimension(16, 0.0, 2.0*PI);
 
   // lengths
-  ip.Dimension(32, 0, 64.0);
-  ip.Dimension(32, 0, 64.0);
+  ip.Dimension(32, 0, 31.0);
+  ip.Dimension(32, 0, 31.0);
 
 
   // fill in test data
@@ -100,7 +100,7 @@ int main(int argc, char* argv[]) {
 
   // test output
   FILE* ftest = fopen("test" SMOD ".dat","wt");
-  double pos2[5] = { 0.0, 0.2, 0.4, 33, 43 };
+  double pos2[5] = { 0.0, 0.2, 0.4, 13.0, 12.0 };
   for (i=0;i<100.0;i++) {
     pos2[2] = 2.0*PI * i / 100.0;
     int j;
