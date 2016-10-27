@@ -6,7 +6,6 @@
   Date: 2016
 */
 #include <vector>
-#include <iterator>
 
 
 template<class C,class I> class Interpolate {

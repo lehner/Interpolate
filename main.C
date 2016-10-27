@@ -9,6 +9,11 @@ Complex fnc(double* x) {
   return cos(x[0]) * cos(x[1]) * cos(x[2]) * exp( - (x[3]*x[3] - x[4]*x[4]) / 100.0 );
 }
 
+#ifndef MOD
+#define MOD nlinear_int
+#define SMOD "nlinear"
+#endif
+
 int main(int argc, char* argv[]) {
   Interpolate<Complex,MOD<Complex> > ip;
 
