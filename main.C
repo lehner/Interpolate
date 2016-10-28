@@ -6,7 +6,7 @@ typedef std::complex<double> Complex;
 #define PI 3.14159265359
 
 Complex fnc(double* x) {
-  return cos(x[0]) * cos(x[1]) * cos(x[2]) * exp( - (x[3]*x[3] - x[4]*x[4]) / 100.0 );
+  return cos(x[0]) * sin(x[1]) * cos(x[2]) * exp( - (x[3]*x[3] - x[4]*x[4]) / 100.0 );
 }
 
 #ifndef MOD
@@ -39,6 +39,7 @@ int main(int argc, char* argv[]) {
   // test output
   FILE* ftest = fopen("test" SMOD ".dat","wt");
   double pos2[5] = { 0.0, 0.2, 0.4, 13.0, 12.0 };
+  //double pos2[5] = { 0.3, 0.2, 0.4, 13.5, 12.5 };
   for (i=0;i<100.0;i++) {
     pos2[2] = 2.0*PI * i / 100.0;
     int j;
