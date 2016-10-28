@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
   Interpolate<Complex,MOD<Complex> > ip;
 
   // angles
-  //               i=0  i=31
+  //               i=0  i=15
   ip.Dimension(16, 0.0, 2.0*PI);
   ip.Dimension(16, 0.0, 2.0*PI);
   ip.Dimension(16, 0.0, 2.0*PI);
